@@ -11,6 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* justify-content: flex-start; */
   align-items: center;
 }
 .MuiCard-root {
@@ -22,12 +23,6 @@
 .classes.root {
   padding: 50px;
 }
-/* @media screen and (max-width: 650px) {
-  .grid{
-    grid-template-areas:
-    'card';
-  }
-} */
 footer {
   display: flex;
   justify-content: space-evenly;
@@ -59,4 +54,7 @@ footer {
   .create-form {
     flex-direction: column;
   }
+}
+.RoomViewClass{
+  overflow: auto;
 }
