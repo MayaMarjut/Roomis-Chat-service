@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -14,7 +15,10 @@ const useStyles = makeStyles({
     height: 280
   },
   media: {
-    height: 140
+    height: 180
+  },
+  content: {
+    height: 100
   }
 });
 
@@ -23,26 +27,26 @@ export default function RoomItem(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea  href={`rooms/${props.room.name}`}>
-        <CardMedia
-          className={classes.media}
-          image={`https://source.unsplash.com/featured/?${props.room.name}`}
-          title='Contemplative Reptile'
-        />
-        <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
-            {props.room.name}
-          </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
-            {props.room.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size='small' color='primary' href={`rooms/${props.room.name}`}>
-          Join
-        </Button>
-      </CardActions>
+      <Link
+        to={`rooms/${props.room.name}`}
+        style={{ textDecoration: 'none', color: 'black' }}
+      >
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={`https://source.unsplash.com/featured/?${props.room.name}`}
+            title='Contemplative Reptile'
+          />
+          <CardContent className={classes.content}>
+            <Typography gutterBottom variant='h5' component='h2'>
+              {props.room.name}
+            </Typography>
+            <Typography variant='body2' color='textSecondary' component='p'>
+              {props.room.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
   );
 }

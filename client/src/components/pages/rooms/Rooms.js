@@ -17,14 +17,14 @@ class Rooms extends Component {
     this.componentDidMount();
   };
 
-//   handleLogout = () => {
-//     localStorage.removeItem('token');
-//     this.props.history.push('/');
-//   };
+  //   handleLogout = () => {
+  //     localStorage.removeItem('token');
+  //     this.props.history.push('/');
+  //   };
   render() {
     return (
       <div>
-        <Header history={this.props.history}/>
+        <Header history={this.props.history} user={this.props.user} />
         {/* <Button onClick={this.handleLogout}>Log out</Button> */}
         <CreateRoom isReady={this.createRoom} />
         <Roomlist rooms={this.state.rooms} />

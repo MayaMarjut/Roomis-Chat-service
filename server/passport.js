@@ -51,9 +51,7 @@ module.exports = function(passport) {
   passport.use(
     new JWTstrategy(opts, async (jwt_payload, done) => {
       try {
-        console.log(jwt_payload.id);
         let user = await User.findOne({ _id: jwt_payload.id });
-        console.log(user);
         if (!user) {
           return done(null, false);
         } else {

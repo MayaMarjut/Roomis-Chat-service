@@ -14,8 +14,8 @@ const Landing = props => {
   useEffect(() => {
     const checkAndUpdateLoginStatus = async () => {
       let status = await Auth.isAuth();
-      if (status !== loginStatus) {
-        setLoginStatus(status);
+      if (status[0] !== loginStatus) {
+        setLoginStatus(status[0]);
       }
     };
     checkAndUpdateLoginStatus();

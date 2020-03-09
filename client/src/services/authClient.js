@@ -15,7 +15,7 @@ export const loginUser = async user => {
 export const isAuthenticated = async () => {
   let token = localStorage.getItem('token');
   if (!token) {
-    return false;
+    return [false, null];
   } else {
     let config = {
       headers: {
@@ -25,13 +25,13 @@ export const isAuthenticated = async () => {
     try {
       let response = await Axios.get(authURL, config);
       if (response.status !== 401 || response.status !== 403) {
-        return true;
+        return [true, response.data.username];
       } else {
-        return false;
+        return [false, null];
       }
     } catch (error) {
       // If authentication fails
-      return false;
+      return [false, null];
     }
   }
 };

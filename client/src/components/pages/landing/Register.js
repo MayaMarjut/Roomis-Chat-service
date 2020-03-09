@@ -40,6 +40,7 @@ const Register = ({ history }) => {
               name='username'
               label='Username'
               value={username}
+              spellCheck='false'
               onChange={e => setUsername(e.target.value)}
             />
           </div>
@@ -48,6 +49,7 @@ const Register = ({ history }) => {
               type='email'
               name='email'
               label='Email'
+              spellCheck='false'
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
@@ -57,6 +59,7 @@ const Register = ({ history }) => {
               type='password'
               name='password'
               label='Password'
+              spellCheck='false'
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
@@ -65,6 +68,7 @@ const Register = ({ history }) => {
             <TextField
               type='password'
               name='password2'
+              spellCheck='false'
               label='Confirm password'
               value={password2}
               onChange={e => setPassword2(e.target.value)}

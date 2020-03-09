@@ -34,7 +34,7 @@ class CreateRoom extends Component {
       <div
         style={{
           margin: 'auto',
-          minHeight: '200px',
+          minHeight: '150px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

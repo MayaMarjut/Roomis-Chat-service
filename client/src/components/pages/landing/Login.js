@@ -30,6 +30,7 @@ const Login = ({ history }) => {
               autoComplete='off'
               value={username}
               onChange={e => setUsername(e.target.value)}
+              spellCheck='false'
             />
           </div>
           <div className='input-group'>
@@ -39,6 +40,7 @@ const Login = ({ history }) => {
               autoComplete='off'
               value={password}
               onChange={e => setPassword(e.target.value)}
+              spellCheck='false'
             />
           </div>
           <div
